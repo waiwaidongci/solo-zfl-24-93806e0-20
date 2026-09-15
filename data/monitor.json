@@ -1,11 +1,11 @@
 {
   "counters": {
     "user": 2,
-    "loft": 2,
+    "loft": 3,
     "device": 3,
     "fan": 1,
-    "alarm": 3,
-    "command": 6
+    "alarm": 4,
+    "command": 7
   },
   "users": [
     {
@@ -124,12 +124,28 @@
         "min": 40,
         "max": 75
       },
-      "readings": [],
-      "reportIds": [],
-      "streak": 0,
-      "lastValue": null,
-      "lastCollectedAt": null,
-      "lastReceivedAt": null,
+      "readings": [
+        {
+          "value": 80,
+          "collectedAt": 1789477200000,
+          "receivedAt": 1789479371248,
+          "reportId": "fix-1"
+        },
+        {
+          "value": 82,
+          "collectedAt": 1789477260000,
+          "receivedAt": 1789479371280,
+          "reportId": "fix-2"
+        }
+      ],
+      "reportIds": [
+        "fix-1",
+        "fix-2"
+      ],
+      "streak": 2,
+      "lastValue": 82,
+      "lastCollectedAt": 1789477260000,
+      "lastReceivedAt": 1789479371280,
       "createdAt": 1789476815408
     },
     {
@@ -179,23 +195,53 @@
       "id": "F0001",
       "loftId": "L0001",
       "name": "轴流风机1",
-      "state": "on",
-      "commandEpoch": 6,
+      "state": "off",
+      "commandEpoch": 7,
       "createdAt": 1789476815417
     }
   ],
   "alarms": [
+    {
+      "id": "A0004",
+      "loftId": "L0001",
+      "deviceId": "D0002",
+      "metric": "humidity",
+      "level": "warning",
+      "status": "resolved",
+      "version": 3,
+      "streak": 2,
+      "createdAt": 1789479371280,
+      "updatedAt": 1789479416407,
+      "history": [
+        {
+          "event": "created",
+          "level": "warning",
+          "streak": 2,
+          "at": 1789479371280
+        },
+        {
+          "event": "confirmed",
+          "by": "keeperA",
+          "at": 1789479416400
+        },
+        {
+          "event": "resolved",
+          "by": "keeperA",
+          "at": 1789479416407
+        }
+      ]
+    },
     {
       "id": "A0003",
       "loftId": "L0001",
       "deviceId": "D0001",
       "metric": "temperature",
       "level": "critical",
-      "status": "confirmed",
-      "version": 3,
+      "status": "resolved",
+      "version": 4,
       "streak": 4,
       "createdAt": 1789477059207,
-      "updatedAt": 1789477059251,
+      "updatedAt": 1789479416876,
       "history": [
         {
           "event": "created",
@@ -214,6 +260,11 @@
           "event": "confirmed",
           "by": "keeperA",
           "at": 1789477059251
+        },
+        {
+          "event": "resolved",
+          "by": "keeperA",
+          "at": 1789479416876
         }
       ]
     },
@@ -286,6 +337,42 @@
     }
   ],
   "commands": [
+    {
+      "id": "C0007",
+      "fanId": "F0001",
+      "loftId": "L0001",
+      "action": "stop",
+      "targetState": "off",
+      "previousState": "on",
+      "epoch": 7,
+      "attempts": 1,
+      "maxAttempts": 3,
+      "status": "acked",
+      "reason": "alarms_resolved",
+      "createdAt": 1789479416876,
+      "updatedAt": 1789479416909,
+      "history": [
+        {
+          "event": "created",
+          "action": "stop",
+          "epoch": 7,
+          "reason": "alarms_resolved",
+          "at": 1789479416876
+        },
+        {
+          "event": "sent",
+          "attempt": 1,
+          "at": 1789479416884
+        },
+        {
+          "event": "acked",
+          "attempt": 1,
+          "at": 1789479416909
+        }
+      ],
+      "sentAt": 1789479416884,
+      "ackedAt": 1789479416909
+    },
     {
       "id": "C0006",
       "fanId": "F0001",
