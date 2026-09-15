@@ -1,0 +1,599 @@
+{
+  "counters": {
+    "user": 2,
+    "loft": 2,
+    "device": 3,
+    "fan": 1,
+    "alarm": 3,
+    "command": 6
+  },
+  "users": [
+    {
+      "id": "U0001",
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin",
+      "loftId": null,
+      "createdAt": 1789476746256
+    },
+    {
+      "id": "U0002",
+      "username": "keeperA",
+      "password": "pw123",
+      "role": "keeper",
+      "loftId": "L0001",
+      "createdAt": 1789476815422
+    }
+  ],
+  "lofts": [
+    {
+      "id": "L0001",
+      "name": "北岸A棚",
+      "createdAt": 1789476767414
+    },
+    {
+      "id": "L0002",
+      "name": "南山B棚",
+      "createdAt": 1789476767420
+    }
+  ],
+  "devices": [
+    {
+      "id": "D0001",
+      "loftId": "L0001",
+      "type": "temperature",
+      "name": "温度传感器1",
+      "key": "dev_27c58230-8c3e-42ce-846e-71ad3beffc61",
+      "thresholds": {
+        "min": 5,
+        "max": 30
+      },
+      "readings": [
+        {
+          "value": 22,
+          "collectedAt": 1789466400000,
+          "receivedAt": 1789476836460,
+          "reportId": "rep-001"
+        },
+        {
+          "value": 33,
+          "collectedAt": 1789466460000,
+          "receivedAt": 1789476836475,
+          "reportId": "rep-002"
+        },
+        {
+          "value": 34,
+          "collectedAt": 1789466520000,
+          "receivedAt": 1789476859484,
+          "reportId": "rep-003"
+        },
+        {
+          "value": 20,
+          "collectedAt": 1789466550000,
+          "receivedAt": 1789476884378,
+          "reportId": "rep-late"
+        },
+        {
+          "value": 35,
+          "collectedAt": 1789466580000,
+          "receivedAt": 1789476884353,
+          "reportId": "rep-004"
+        },
+        {
+          "value": 36,
+          "collectedAt": 1789466640000,
+          "receivedAt": 1789476884359,
+          "reportId": "rep-005"
+        },
+        {
+          "value": 38,
+          "collectedAt": 1789473600000,
+          "receivedAt": 1789477059207,
+          "reportId": "cc-1"
+        },
+        {
+          "value": 39,
+          "collectedAt": 1789473660000,
+          "receivedAt": 1789477059217,
+          "reportId": "cc-2"
+        }
+      ],
+      "reportIds": [
+        "rep-001",
+        "rep-002",
+        "rep-003",
+        "rep-004",
+        "rep-005",
+        "rep-late",
+        "cc-1",
+        "cc-2"
+      ],
+      "streak": 4,
+      "lastValue": 39,
+      "lastCollectedAt": 1789473660000,
+      "lastReceivedAt": 1789477059217,
+      "createdAt": 1789476815403
+    },
+    {
+      "id": "D0002",
+      "loftId": "L0001",
+      "type": "humidity",
+      "name": "湿度传感器1",
+      "key": "dev_7a11bfb9-212e-4176-84ef-64a0153c0e5e",
+      "thresholds": {
+        "min": 40,
+        "max": 75
+      },
+      "readings": [],
+      "reportIds": [],
+      "streak": 0,
+      "lastValue": null,
+      "lastCollectedAt": null,
+      "lastReceivedAt": null,
+      "createdAt": 1789476815408
+    },
+    {
+      "id": "D0003",
+      "loftId": "L0001",
+      "type": "ammonia",
+      "name": "氨气传感器1",
+      "key": "dev_88e7d334-6ed1-463c-a3ee-3be707cf1ba3",
+      "thresholds": {
+        "min": 0,
+        "max": 15
+      },
+      "readings": [
+        {
+          "value": 20,
+          "collectedAt": 1789470000000,
+          "receivedAt": 1789476961056,
+          "reportId": "nh3-1"
+        },
+        {
+          "value": 22,
+          "collectedAt": 1789470060000,
+          "receivedAt": 1789476961082,
+          "reportId": "nh3-2"
+        },
+        {
+          "value": 5,
+          "collectedAt": 1789470120000,
+          "receivedAt": 1789477024992,
+          "reportId": "nh3-3"
+        }
+      ],
+      "reportIds": [
+        "nh3-1",
+        "nh3-2",
+        "nh3-3"
+      ],
+      "streak": 0,
+      "lastValue": 5,
+      "lastCollectedAt": 1789470120000,
+      "lastReceivedAt": 1789477024992,
+      "createdAt": 1789476815413
+    }
+  ],
+  "fans": [
+    {
+      "id": "F0001",
+      "loftId": "L0001",
+      "name": "轴流风机1",
+      "state": "on",
+      "commandEpoch": 6,
+      "createdAt": 1789476815417
+    }
+  ],
+  "alarms": [
+    {
+      "id": "A0003",
+      "loftId": "L0001",
+      "deviceId": "D0001",
+      "metric": "temperature",
+      "level": "critical",
+      "status": "confirmed",
+      "version": 3,
+      "streak": 4,
+      "createdAt": 1789477059207,
+      "updatedAt": 1789477059251,
+      "history": [
+        {
+          "event": "created",
+          "level": "warning",
+          "streak": 3,
+          "at": 1789477059207
+        },
+        {
+          "event": "escalated",
+          "from": "warning",
+          "to": "critical",
+          "streak": 4,
+          "at": 1789477059217
+        },
+        {
+          "event": "confirmed",
+          "by": "keeperA",
+          "at": 1789477059251
+        }
+      ]
+    },
+    {
+      "id": "A0002",
+      "loftId": "L0001",
+      "deviceId": "D0003",
+      "metric": "ammonia",
+      "level": "warning",
+      "status": "resolved",
+      "version": 3,
+      "streak": 2,
+      "createdAt": 1789476961082,
+      "updatedAt": 1789477006686,
+      "history": [
+        {
+          "event": "created",
+          "level": "warning",
+          "streak": 2,
+          "at": 1789476961082
+        },
+        {
+          "event": "confirmed",
+          "by": "keeperA",
+          "at": 1789477006678
+        },
+        {
+          "event": "resolved",
+          "by": "keeperA",
+          "at": 1789477006686
+        }
+      ]
+    },
+    {
+      "id": "A0001",
+      "loftId": "L0001",
+      "deviceId": "D0001",
+      "metric": "temperature",
+      "level": "critical",
+      "status": "resolved",
+      "version": 4,
+      "streak": 2,
+      "createdAt": 1789476859484,
+      "updatedAt": 1789476938151,
+      "history": [
+        {
+          "event": "created",
+          "level": "warning",
+          "streak": 2,
+          "at": 1789476859484
+        },
+        {
+          "event": "escalated",
+          "from": "warning",
+          "to": "critical",
+          "streak": 4,
+          "at": 1789476884359
+        },
+        {
+          "event": "confirmed",
+          "by": "keeperA",
+          "at": 1789476919424
+        },
+        {
+          "event": "resolved",
+          "by": "keeperA",
+          "at": 1789476938151
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "id": "C0006",
+      "fanId": "F0001",
+      "loftId": "L0001",
+      "action": "start",
+      "targetState": "on",
+      "previousState": "off",
+      "epoch": 6,
+      "attempts": 1,
+      "maxAttempts": 3,
+      "status": "acked",
+      "reason": "alarm_active",
+      "createdAt": 1789477059207,
+      "updatedAt": 1789477059238,
+      "history": [
+        {
+          "event": "created",
+          "action": "start",
+          "epoch": 6,
+          "reason": "alarm_active",
+          "at": 1789477059207
+        },
+        {
+          "event": "sent",
+          "attempt": 1,
+          "at": 1789477059213
+        },
+        {
+          "event": "acked",
+          "attempt": 1,
+          "at": 1789477059238
+        }
+      ],
+      "sentAt": 1789477059213,
+      "ackedAt": 1789477059238
+    },
+    {
+      "id": "C0005",
+      "fanId": "F0001",
+      "loftId": "L0001",
+      "action": "stop",
+      "targetState": "off",
+      "previousState": "on",
+      "epoch": 5,
+      "attempts": 1,
+      "maxAttempts": 3,
+      "status": "acked",
+      "reason": "alarms_resolved",
+      "createdAt": 1789477024992,
+      "updatedAt": 1789477025021,
+      "history": [
+        {
+          "event": "created",
+          "action": "stop",
+          "epoch": 5,
+          "reason": "alarms_resolved",
+          "at": 1789477024992
+        },
+        {
+          "event": "sent",
+          "attempt": 1,
+          "at": 1789477024999
+        },
+        {
+          "event": "acked",
+          "attempt": 1,
+          "at": 1789477025021
+        }
+      ],
+      "sentAt": 1789477024999,
+      "ackedAt": 1789477025021
+    },
+    {
+      "id": "C0004",
+      "fanId": "F0001",
+      "loftId": "L0001",
+      "action": "stop",
+      "targetState": "off",
+      "previousState": "on",
+      "epoch": 4,
+      "attempts": 3,
+      "maxAttempts": 3,
+      "status": "failed",
+      "reason": "alarms_resolved",
+      "createdAt": 1789477006686,
+      "updatedAt": 1789477006765,
+      "history": [
+        {
+          "event": "created",
+          "action": "stop",
+          "epoch": 4,
+          "reason": "alarms_resolved",
+          "at": 1789477006686
+        },
+        {
+          "event": "sent",
+          "attempt": 1,
+          "at": 1789477006693
+        },
+        {
+          "event": "attempt_failed",
+          "attempt": 1,
+          "reason": "failure",
+          "at": 1789477006717
+        },
+        {
+          "event": "rollback",
+          "restoredState": "on",
+          "at": 1789477006717
+        },
+        {
+          "event": "retry_scheduled",
+          "attempt": 2,
+          "at": 1789477006717
+        },
+        {
+          "event": "sent",
+          "attempt": 2,
+          "at": 1789477006718
+        },
+        {
+          "event": "attempt_failed",
+          "attempt": 2,
+          "reason": "failure",
+          "at": 1789477006743
+        },
+        {
+          "event": "rollback",
+          "restoredState": "on",
+          "at": 1789477006743
+        },
+        {
+          "event": "retry_scheduled",
+          "attempt": 3,
+          "at": 1789477006743
+        },
+        {
+          "event": "sent",
+          "attempt": 3,
+          "at": 1789477006744
+        },
+        {
+          "event": "attempt_failed",
+          "attempt": 3,
+          "reason": "failure",
+          "at": 1789477006765
+        },
+        {
+          "event": "rollback",
+          "restoredState": "on",
+          "at": 1789477006765
+        },
+        {
+          "event": "failed_final",
+          "at": 1789477006765
+        }
+      ],
+      "sentAt": 1789477006744
+    },
+    {
+      "id": "C0003",
+      "fanId": "F0001",
+      "loftId": "L0001",
+      "action": "start",
+      "targetState": "on",
+      "previousState": "off",
+      "epoch": 3,
+      "attempts": 3,
+      "maxAttempts": 3,
+      "status": "acked",
+      "reason": "alarm_active",
+      "createdAt": 1789476961082,
+      "updatedAt": 1789476961162,
+      "history": [
+        {
+          "event": "created",
+          "action": "start",
+          "epoch": 3,
+          "reason": "alarm_active",
+          "at": 1789476961082
+        },
+        {
+          "event": "sent",
+          "attempt": 1,
+          "at": 1789476961089
+        },
+        {
+          "event": "attempt_failed",
+          "attempt": 1,
+          "reason": "failure",
+          "at": 1789476961111
+        },
+        {
+          "event": "rollback",
+          "restoredState": "off",
+          "at": 1789476961111
+        },
+        {
+          "event": "retry_scheduled",
+          "attempt": 2,
+          "at": 1789476961111
+        },
+        {
+          "event": "sent",
+          "attempt": 2,
+          "at": 1789476961113
+        },
+        {
+          "event": "attempt_failed",
+          "attempt": 2,
+          "reason": "failure",
+          "at": 1789476961138
+        },
+        {
+          "event": "rollback",
+          "restoredState": "off",
+          "at": 1789476961138
+        },
+        {
+          "event": "retry_scheduled",
+          "attempt": 3,
+          "at": 1789476961138
+        },
+        {
+          "event": "sent",
+          "attempt": 3,
+          "at": 1789476961139
+        },
+        {
+          "event": "acked",
+          "attempt": 3,
+          "at": 1789476961162
+        }
+      ],
+      "sentAt": 1789476961139,
+      "ackedAt": 1789476961162
+    },
+    {
+      "id": "C0002",
+      "fanId": "F0001",
+      "loftId": "L0001",
+      "action": "stop",
+      "targetState": "off",
+      "previousState": "on",
+      "epoch": 2,
+      "attempts": 1,
+      "maxAttempts": 3,
+      "status": "acked",
+      "reason": "alarms_resolved",
+      "createdAt": 1789476938151,
+      "updatedAt": 1789476938181,
+      "history": [
+        {
+          "event": "created",
+          "action": "stop",
+          "epoch": 2,
+          "reason": "alarms_resolved",
+          "at": 1789476938151
+        },
+        {
+          "event": "sent",
+          "attempt": 1,
+          "at": 1789476938157
+        },
+        {
+          "event": "acked",
+          "attempt": 1,
+          "at": 1789476938181
+        }
+      ],
+      "sentAt": 1789476938157,
+      "ackedAt": 1789476938181
+    },
+    {
+      "id": "C0001",
+      "fanId": "F0001",
+      "loftId": "L0001",
+      "action": "start",
+      "targetState": "on",
+      "previousState": "off",
+      "epoch": 1,
+      "attempts": 1,
+      "maxAttempts": 3,
+      "status": "acked",
+      "reason": "alarm_active",
+      "createdAt": 1789476859485,
+      "updatedAt": 1789476859516,
+      "history": [
+        {
+          "event": "created",
+          "action": "start",
+          "epoch": 1,
+          "reason": "alarm_active",
+          "at": 1789476859485
+        },
+        {
+          "event": "sent",
+          "attempt": 1,
+          "at": 1789476859492
+        },
+        {
+          "event": "acked",
+          "attempt": 1,
+          "at": 1789476859516
+        }
+      ],
+      "sentAt": 1789476859492,
+      "ackedAt": 1789476859516
+    }
+  ]
+}
